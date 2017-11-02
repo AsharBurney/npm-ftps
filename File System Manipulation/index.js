@@ -71,7 +71,7 @@ var functionality = (arguments) => {
             break;
 
         default:
-            console.log("Unrecognized command: "+ command);
+            require('../Parser/index').parserjs();
     }
 };
 module.exports = functionality;

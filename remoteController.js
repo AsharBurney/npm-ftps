@@ -6,6 +6,7 @@ if (arguments._.length != 0)
 {
     require('./File System Manipulation')(arguments);
 }
-else{
+else
+{
     console.log("Arguments required.");
 }
