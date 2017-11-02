@@ -5,6 +5,7 @@ var FTPS = require('ftps');
 var fs = require('fs'),
     ini = require('ini');
 
+// Get file configration
 var config = ini.parse(fs.readFileSync('./config.ini', 'utf-8')).server;
 
 var ftps = new FTPS({
