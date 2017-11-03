@@ -53,6 +53,11 @@ const arguments = require('yargs')
             describe: 'Provide the name to file',
             alias: 'f',
             demand: true
+        },
+        path:{
+            describe: 'Provide the path to create file',
+            alias: 'p',
+            demand: true
         }
     })
     .command('mv', 'Move a file with a path specified.', {
