@@ -1,5 +1,5 @@
 //Arguments parser
-const arguments = require('yargs').argv;
+arguments = require('./Parser');
 
 //BASE CLASS
 if (arguments._.length != 0)

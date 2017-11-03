@@ -71,7 +71,8 @@ var functionality = (arguments) => {
             break;
 
         default:
-            require('../Parser/index').parserjs();
+            console.log("by default");
+            //require('../Parser/index').parserjs();
     }
 };
 module.exports = functionality;

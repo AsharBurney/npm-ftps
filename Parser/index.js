@@ -1,59 +1,73 @@
-//---------yargs for help-----------
+const arguments = require('yargs')
+    .command('list', 'Get the list of files')
+    .command('pwd', 'Print Working Directory')
+    .command('cd', 'Change directory provided the path', {
+        dir:{
+            describe: 'Provide the path to directory',
+            alias: 'd',
+            demand: true
+        }
+    })
+    .command('cd', 'Change directory provided the path.', {
+        dir:{
+            describe: 'Provide the path to directory',
+            alias: 'd',
+            demand: true
+        }
+    })
+    .command('mkdir', 'Make a directory with a name specified.', {
+        dir:{
+            describe: 'Provide the directory name',
+            alias: 'd',
+            demand: true
+        }
+    })
+    .command('rmdir', 'Remove a directory with a name specified.', {
+        dir:{
+            describe: 'Provide the name to directory',
+            alias: 'd',
+            demand: true
+        }
+    })
+    .command('rm', 'Remove a file with a name specified.', {
+        file:{
+            describe: 'Provide the name to file',
+            alias: 'f',
+            demand: true
+        }
+    })
+    .command('addfile', 'Add a file with a path specified.', {
+        file:{
+            describe: 'Provide the name of file',
+            alias: 'f',
+            demand: true
+        },
+        path:{
+            describe: 'Provide the path to create file',
+            alias: 'p',
+            demand: true
+        }
+    })
+    .command('get', 'Get the file to local system from remote server.', {
+        file:{
+            describe: 'Provide the name to file',
+            alias: 'f',
+            demand: true
+        }
+    })
+    .command('mv', 'Move a file with a path specified.', {
+        file:{
+            describe: 'Provide the name of file',
+            alias: 'f',
+            demand: true
+        },
+        path:{
+            describe: 'Provide the path to create file',
+            alias: 'p',
+            demand: true
+        }
+    })
+    .help()
+    .argv;
 
-
-var parserjs = () => {
-    require('yargs')
-        .options({
-            'list': {
-                describe: 'List the current files in a directory',
-                boolean:true,
-                demandOption: true
-
-            },
-            'pwd': {
-                boolean:false,
-                describe: 'Print working directory',
-                demandOption: true
-            },
-            'cd': {
-                boolean:false,
-                describe: 'for jumping into directory',
-                demandOption: true
-            },
-            'mkdir': {
-                boolean:false,
-                describe: 'for making a directory with name',
-                demandOption: true
-            },
-            'rmdir': {
-                boolean:false,
-                describe: 'for removing a directory with name',
-                demandOption: true
-            },
-            'rm': {
-                boolean:false,
-                describe: 'for removing a file with name',
-                demandOption: true
-            },
-            'addfile': {
-                boolean:false,
-                describe: 'Add a new file to remote server',
-                demandOption: true
-            },
-            'get': {
-                boolean:false,
-                describe: 'Download file from remote server to a local system',
-                demandOption: true
-            },
-            'mv': {
-                boolean:false,
-                describe: 'Move file within remote server',
-                demandOption: true
-            }
-        })
-        .help('Help')
-        .argv;
-};
-
-module.exports = parserjs();
-//---------------------------------------------
+module.exports = arguments;
