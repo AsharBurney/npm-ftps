@@ -5,7 +5,7 @@ npm is the package manager for JavaScript and the world’s largest software reg
 
 # To Install NPM:
 ```sh
-  npm install -g npm
+  npm install
   ```
 
 ### FTPS:
